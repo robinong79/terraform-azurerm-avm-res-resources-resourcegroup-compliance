@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Terraform files compliance GDPR Europe and ISO27001
+
+When updating code you always!! keep **IS27001 and the GDPR for the EU in mind**. Modules, variables etc, must be compliant.
