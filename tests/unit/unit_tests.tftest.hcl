@@ -144,3 +144,32 @@ run "test_role_assignment_role_definition_id_validation_succeeds" {
   ]
 }
 
+run "test_valid_location_europe" {
+  command = plan
+  variables {
+    location = "westeurope"
+    name     = "rg-test-location-valid"
+  }
+}
+
+run "test_invalid_location_non_europe" {
+  command = plan
+  variables {
+    location = "eastus"
+    name     = "rg-test-location-invalid"
+  }
+  expect_failures = [
+    var.location
+  ]
+}
+
+run "test_invalid_location_empty" {
+  command = plan
+  variables {
+    location = ""
+    name     = "rg-test-location-empty"
+  }
+  expect_failures = [
+    var.location
+  ]
+}

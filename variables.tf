@@ -1,7 +1,25 @@
 variable "location" {
   type        = string
-  description = "Required. The Azure region for deployment of the this resource."
+  description = "Required. The Azure region for deployment of this resource."
   nullable    = false
+
+  validation {
+    condition = contains([
+      "francescentral",
+      "germanywestcentral",
+      "italynorth",
+      "northeurope",
+      "norwayeast",
+      "polandcentral",
+      "spaincentral",
+      "swedencentral",
+      "switzerlandnorth",
+      "uksouth",
+      "ukwest",
+      "westeurope"
+    ], lower(var.location))
+    error_message = "The selected Azure region is not in the recommended list for GDPR compliance. Please refer to the official Azure documentation for the most up-to-date list of regions and their compliance certifications: <https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/>"
+  }
 }
 
 variable "name" {

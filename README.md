@@ -177,6 +177,10 @@ Description: The resource Id of the resource group
 
 No modules.
 
+## Compliance
+
+This module is setup to be compliant with GDPR (Europe) and ISO27001
+
 <!-- markdownlint-disable-next-line MD041 -->
 ## Data Collection
 
